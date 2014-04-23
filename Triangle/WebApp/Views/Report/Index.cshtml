@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DataAccess.Entities.TriangleReport>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Report</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TriangleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TriangleType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+    </tr>
+}
+</table>
+<div>
+    @Html.ActionLink("Back to home", "Index","Home")
+</div>

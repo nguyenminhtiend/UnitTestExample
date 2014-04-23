@@ -1,0 +1,47 @@
+﻿@model WebApp.Models.TriangleModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TriangleModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SideA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SideA)
+            @Html.ValidationMessageFor(model => model.SideA)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SideB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SideB)
+            @Html.ValidationMessageFor(model => model.SideB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SideC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SideC)
+            @Html.ValidationMessageFor(model => model.SideC)
+        </div>       
+        @ViewBag.TypeTriangle
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Report", "Index","Report")
+</div>
